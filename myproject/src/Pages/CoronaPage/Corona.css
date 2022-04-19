@@ -1,0 +1,10 @@
+.butt{
+    width: 100px;
+    height: 35px;
+    background-color: bisque;
+    border:2px solid brown;
+}
+.inpu{
+    height: 35px;
+    width: 200px;
+}
