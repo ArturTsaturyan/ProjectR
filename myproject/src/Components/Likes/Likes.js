@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import './Likes.css'
+import {incrementLikes,decrementLikes} from '../../redux/about/actions'
+
 
 
 function Likes(props) {
@@ -7,13 +9,12 @@ function Likes(props) {
     return (
         <div className="button-controls">
             <button onClick={props.onIncrementLikes}>❤ {props.likes}</button>
-            <button onClick={props.onDecrementLikes}>Dislike</button>
+            <button disabled={props.likes === 0} onClick={props.onDecrementLikes}>Dislike</button>
         </div>
     )
 }
 
 function mapStateToProps(state){
-    console.log("mapStateToProps >", state);
     const {likes} = state;
     return {
         likes: likes.likes
@@ -22,16 +23,16 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){ 
     return {
-        onIncrementLikes: () =>{
-          const action = {type: "INCREMENT"};
-          dispatch(action); 
-        },  
-        onDecrementLikes: () =>{
-            const action = {type: "DECREMENT"};
-            dispatch(action);
-          }            
+        onIncrementLikes: () => dispatch(incrementLikes()), 
+        onDecrementLikes: () => dispatch(decrementLikes())            
     }
 
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Likes);
+                        
+//այսպես ստանում ենք մեր ֆունքցիաները mapDispatchToProps
+//այստեղ միացնում ենք մեր կոմպոնետը redux-ին հատուկ ֆունկցիայով connect
+//Օգտագործում ենք հատուկ ֆունկցիա mapStateToProps,որպեսզի կարողանանք ուղղարկել մեր պահեստից redux-Ի
+//մեր կոմպոնենտին
+//Նույնը անում ենք մեր մեթոդների հետ և օգտագործում mapDispatchToProps
                         

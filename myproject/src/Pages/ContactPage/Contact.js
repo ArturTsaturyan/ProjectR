@@ -2,8 +2,8 @@ import React, {useState,useEffect} from 'react';
 import './Contact.css'
 import ToDoForm from '../../Components/ToDoForm/ToDoForm'
 import ToDo from '../../Components/ToDo/ToDo';
-import { setLoading } from '../../Redux/contact/contact.action';
-import { useDispatch, useSelector } from 'react-redux'
+import { setLoading } from '../../redux/contact/contact.action';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const Contact = () => {
