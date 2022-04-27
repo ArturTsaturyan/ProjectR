@@ -13,7 +13,7 @@ const Register = () => {
                  <Input name="lastName" control={control} type="text"placeholder="last Name"/>
                  <Input name="email" control={control} type="email"placeholder="email"/>
                  <Input name="password" control={control} type="password"placeholder="password"/>
-                 <input type="submit" className='inpsubmit'value={"Submit"}/>
+                 <input type="submit" value={"Submit"}/>
              </form>
         </div>
     );

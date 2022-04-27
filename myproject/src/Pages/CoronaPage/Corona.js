@@ -49,8 +49,10 @@ const Corona = () => {
     console.log(data);
     return (
         <div>
-            <input onChange={hemdleChange}/>
-            <button onClick={hendleSend}>click</button>
+            <div className='inpbut'>
+                <input className='inpu' onChange={hemdleChange}/>
+                <button className='butt' onClick={hendleSend}>click</button>
+            </div>
             {data.name !== '' && <div>Երկիր {data.name}</div>}
             {data.confirmed !== "" ? <div>Հաստատված {data.confirmed}</div> : null}
             {data.deaths !== '' && <div>Որից մահացածներ {data.deaths}</div>}

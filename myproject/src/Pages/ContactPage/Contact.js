@@ -1,10 +1,22 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import './Contact.css'
 import ToDoForm from '../../Components/ToDoForm/ToDoForm'
 import ToDo from '../../Components/ToDo/ToDo';
+import { setLoading } from '../../redux/contact/contact.action';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const Contact = () => {
+
+
+    const dispatch=useDispatch()
+    const lodr=useSelector((state)=>state.contact.loading)
+
+    useEffect(()=>{
+        dispatch(setLoading)
+    },[])
+
+   alert(lodr)
     const [todos,setTodos]=useState([])
 
    const addTask = (userInput)=>{
