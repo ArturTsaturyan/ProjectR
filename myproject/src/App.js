@@ -19,7 +19,7 @@ export default function App() {
    <Roter>
      <Menu/>
      <Routes>
-        <Route path='/Home' element={<Home />}/>
+        <Route path='/' element={<Home />}/>
         <Route exact path='/AboutPage'  element={<About/>}/>
         <Route exact path='/Contact' element={<Contact/>}/>
         <Route exact path='/Corona' element={<Corona/>}/>
