@@ -30,7 +30,7 @@ export const likesReducer = (state = initialState, action) =>{//Ցանկացած
                         comments: [...state.comments, action.data]
                 }
         case COMMENT_DELETE:
-                    return(()=>{
+                    return(() =>{
                       const { id } = action;
                       const { comments } = state;
                       const itemIndex = comments.findIndex(res => res.id === id)
